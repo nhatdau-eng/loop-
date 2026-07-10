@@ -1,0 +1,6 @@
+Code Hoisting (Nhấc mã bất biến): Di chuyển hàm tính thuế nặng calculateHeavyTaxRate() ra phía trước vòng lặp. 
+CPU chỉ tính toán một lần duy nhất thay vì lặp lại vô ích ở mỗi chặng, giải quyết triệt để lỗi Loop Invariant.
+Tái sử dụng đối tượng (Tránh Object Churn): Khai báo duy nhất một đối tượng cấu hình FuelConfig config = new FuelConfig() bên ngoài vòng lặp. 
+Kỹ thuật này ngăn chặn việc cấp phát và giải phóng bộ nhớ RAM liên tục cho hàng triệu đối tượng rác.
+Early Exit (Thoát sớm bằng Guard Clause): Bổ sung mệnh đề bảo vệ if (totalCost > maxBudget) break;. Hệ thống lập tức bẻ gãy vòng lặp ngay khi vượt quá ngân sách,
+ tiết kiệm tối đa chu kỳ CPU dư thừa.
